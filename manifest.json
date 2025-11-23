@@ -1,0 +1,11 @@
+{
+  "name": "Pro Tools",
+  "short_name": "ProTools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A4AFF",
+  "icons": [
+    { "src": "/images/og-image.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

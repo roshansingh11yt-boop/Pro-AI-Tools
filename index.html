@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Tools — Fast, Monetizable Utilities</title>
+  <meta name="description" content="Lightweight online tools: Text→Emoji, Word counter, Image compressor, QR generator, Passwords. Optimized for speed & monetization."/>
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pro Tools — Fast, Monetizable Utilities" />
+  <meta property="og:description" content="Useful web utilities that load instantly. Great for sharing & earning with AdSense/affiliate." />
+  <meta property="og:image" content="/images/og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <h1>Pro Tools</h1>
+      <p class="tag">Fast utilities — optimized for SEO, speed & monetization</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Ad placeholder (replace with real AdSense code after approval) -->
+    <div class="ad-box">Ad Slot — paste AdSense code here after approval</div>
+
+    <section class="grid">
+
+      <!-- Text to Emoji -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Text → Emoji</h2>
+          <small>Convert text into emoji-rich text</small>
+        </div>
+        <textarea id="t2e_in" placeholder="Type/paste text..." rows="4"></textarea>
+        <div class="controls">
+          <select id="emojiStyle">
+            <option value="mix">Colorful Mix</option>
+            <option value="minimal">Minimal</option>
+            <option value="unicode">Unicode-only</option>
+          </select>
+          <button id="t2e_btn">Convert</button>
+        </div>
+        <div id="t2e_out" class="output" aria-live="polite">Result will appear here</div>
+        <div class="small-row">
+          <button id="t2e_copy" class="ghost" style="display:none">Copy</button>
+        </div>
+      </article>
+
+      <!-- Word Counter -->
+      <article class="card">
+        <div class="card-head"><h2>Word & Character Counter</h2><small>Reading time & simple SEO score</small></div>
+        <textarea id="wc_in" placeholder="Paste article or text..." rows="6"></textarea>
+        <div class="controls">
+          <button id="wc_btn">Analyze</button>
+          <button id="wc_clear" class="ghost">Clear</button>
+        </div>
+        <div id="wc_out" class="output">Analysis will appear here</div>
+      </article>
+
+      <!-- Image Compressor -->
+      <article class="card">
+        <div class="card-head"><h2>Image Compressor & Resizer</h2><small>Client-side compression, download ready</small></div>
+        <input id="img_file" type="file" accept="image/*" />
+        <div class="controls">
+          <input id="img_width" type="number" placeholder="Max width px (e.g.1200)" />
+          <input id="img_quality" type="number" placeholder="Quality 0.1 - 1.0" step="0.1" />
+        </div>
+        <div class="controls">
+          <button id="img_compress">Compress & Preview</button>
+          <button id="img_download" class="ghost">Download</button>
+        </div>
+        <div id="img_preview" class="output">No image compressed yet</div>
+      </article>
+
+      <!-- QR Generator -->
+      <article class="card">
+        <div class="card-head"><h2>QR Code Generator</h2><small>Generate & download QR images</small></div>
+        <input id="qr_text" type="text" placeholder="Enter URL or text..." />
+        <div class="controls">
+          <button id="qr_gen">Generate</button>
+          <button id="qr_dl" class="ghost">Download</button>
+        </div>
+        <div id="qr_preview" class="output">QR will appear here</div>
+      </article>
+
+      <!-- Password Generator -->
+      <article class="card">
+        <div class="card-head"><h2>Password Generator</h2><small>Custom length & charset</small></div>
+        <div class="controls small">
+          <input id="pw_len" type="number" placeholder="Length" value="12" min="4" />
+          <select id="pw_type">
+            <option value="all">Mixed</option>
+            <option value="chars">Letters only</option>
+            <option value="nums">Numbers only</option>
+          </select>
+        </div>
+        <div class="controls">
+          <button id="pw_gen">Generate</button>
+        </div>
+        <div id="pw_out" class="output">Password will appear here</div>
+      </article>
+
+    </section>
+
+    <!-- Contact / Pro Services CTA -->
+    <section class="card full">
+      <h3>Hire / White-label</h3>
+      <p class="muted">Need a custom tool, branding, or SEO + monetization setup? Contact us.</p>
+      <form id="contact" action="https://formspree.io/f/yourformid" method="POST">
+        <div class="controls small">
+          <input name="name" placeholder="Name" required />
+          <input name="email" placeholder="Email" required />
+        </div>
+        <input name="project" placeholder="Project details (optional)" />
+        <div class="controls"><button type="submit">Send</button></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="container">© Pro Tools — Deploy: Netlify / Vercel / Hostinger · Add AdSense after approval · Privacy policy required for AdSense</div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script>
+    // register service worker for PWA
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js').catch(()=>{}); }
+  </script>
+</body>
+</html>
